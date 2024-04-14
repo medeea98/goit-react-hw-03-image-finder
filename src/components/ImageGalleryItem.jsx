@@ -1,5 +1,6 @@
 // ImageGalleryItem.js
 import React, { Component } from 'react';
+import css from '../styles.module.css';
 
 class ImageGalleryItem extends Component {
   handleClick = () => {
@@ -8,9 +9,10 @@ class ImageGalleryItem extends Component {
 
   render() {
     const { image } = this.props;
+
     return (
-      <li className="gallery-item" onClick={this.handleClick}>
-        <img src={image.webformatURL} alt="" />
+      <li className={css.ImageGalleryItem} onClick={this.handleClick}>
+        <img src={image.webformatURL} alt="" className={css['ImageGalleryItem-image']} />
       </li>
     );
   }

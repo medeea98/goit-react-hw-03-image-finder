@@ -1,5 +1,6 @@
 // Modal.js
 import React, { Component } from 'react';
+import css from '../styles.module.css';
 
 class Modal extends Component {
   handleKeyPress = (e) => {
@@ -18,8 +19,8 @@ class Modal extends Component {
 
   render() {
     return (
-      <div className="overlay" onClick={this.props.closeModal}>
-        <div className="modal">
+      <div className={css.Overlay} onClick={this.props.closeModal}>
+        <div className={css.Modal}>
           <img src={this.props.modalImage} alt="" />
         </div>
       </div>
