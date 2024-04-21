@@ -1,5 +1,6 @@
 // Button.js
-import React, { Component } from 'react';
+
+/* import React, { Component } from 'react';
 import css from '../styles.module.css';
 
 class Button extends Component {
@@ -11,5 +12,17 @@ class Button extends Component {
     );
   }
 }
+
+export default Button; */
+import React from 'react';
+import css from '../styles.module.css';
+
+const Button = ({ onClick }) => {
+  return (
+    <button className={css.Button} onClick={onClick}>
+      Load more
+    </button>
+  );
+};
 
 export default Button;
