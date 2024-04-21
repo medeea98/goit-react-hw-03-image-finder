@@ -40,7 +40,7 @@ class Searchbar extends Component {
 }
 
 export default Searchbar; */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import css from '../styles.module.css';
 
 const Searchbar = ({ setQuery, onSubmit }) => {
@@ -55,12 +55,6 @@ const Searchbar = ({ setQuery, onSubmit }) => {
     setQuery(inputValue);
     onSubmit(e);
   };
-
-  // useEffect(() => {
-  //   if (inputValue.trim() !== '') {
-  //     onSubmit();
-  //   }
-  // }, [inputValue, onSubmit]);
 
   return (
     <header className={css.Searchbar}>
