@@ -33,18 +33,18 @@ import React, { useEffect } from 'react';
 import css from '../styles.module.css';
 
 const Modal = ({ closeModal, modalImage }) => {
-  const handleKeyPress = (e) => {
-    if (e.key === 'Escape') {
-      closeModal();
-    }
-  };
-
   useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    };
+
     document.addEventListener('keydown', handleKeyPress);
     return () => {
       document.removeEventListener('keydown', handleKeyPress);
     };
-  }, [handleKeyPress]); 
+  }, [closeModal]); // Asigurați-vă că handleKeyPress este definită în interiorul efectului
 
   return (
     <div className={css.Overlay} onClick={closeModal}>
