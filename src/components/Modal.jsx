@@ -44,7 +44,7 @@ const Modal = ({ closeModal, modalImage }) => {
     return () => {
       document.removeEventListener('keydown', handleKeyPress);
     };
-  }, []);
+  }, [handleKeyPress]); 
 
   return (
     <div className={css.Overlay} onClick={closeModal}>

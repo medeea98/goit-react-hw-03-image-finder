@@ -41,7 +41,6 @@ class Searchbar extends Component {
 
 export default Searchbar; */
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import css from '../styles.module.css';
 
 const Searchbar = ({ setQuery, onSubmit }) => {
