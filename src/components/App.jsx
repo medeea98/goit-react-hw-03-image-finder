@@ -97,13 +97,24 @@ export const App = () => {
     setPage(1);
 
     try {
-      const response = await axios.get(`https://pixabay.com/api/?q=${query}&page=1&key=${key}&image_type=photo&orientation=horizontal&per_page=12`);
-      setImages(response.data.hits);
+      const newQuery = e.target.elements[1].value;
+
+      // Fetch images for the new query
+      await fetchImages(newQuery);
     } catch (error) {
       console.error('Error fetching images: ', error);
     }
 
     setLoading(false);
+  };
+
+  const fetchImages = async (query) => {
+    try {
+      const response = await axios.get(`https://pixabay.com/api/?q=${query}&page=1&key=${key}&image_type=photo&orientation=horizontal&per_page=12`);
+      setImages(response.data.hits);
+    } catch (error) {
+      console.error('Error fetching images: ', error);
+    }
   };
 
   const loadMoreImages = async () => {

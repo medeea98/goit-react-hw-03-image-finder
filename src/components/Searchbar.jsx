@@ -56,11 +56,11 @@ const Searchbar = ({ setQuery, onSubmit }) => {
     onSubmit(e);
   };
 
-  useEffect(() => {
-    if (inputValue.trim() !== '') {
-      onSubmit();
-    }
-  }, [inputValue, onSubmit]);
+  // useEffect(() => {
+  //   if (inputValue.trim() !== '') {
+  //     onSubmit();
+  //   }
+  // }, [inputValue, onSubmit]);
 
   return (
     <header className={css.Searchbar}>
